@@ -1,29 +1,21 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Container } from 'react-responsive-grid'
-
-require('prismjs/themes/prism-tomorrow.css');
-
 import { rhythm, scale } from '../utils/typography'
 
-class Template extends React.Component {
+import 'prismjs/themes/prism-tomorrow.css';
 
-  render() {
-    const { location, children } = this.props;
+export default class Template extends React.Component {
 
+  getHeader(location) {
     let header;
-   
-    /*
-    let rootPath = `/`;
+    
+    const bigHeader = 
+      ["/", "/tags/"].indexOf(location.pathname) !== -1 ||
+                location.pathname.indexOf("/tags/") !== -1;
 
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
-    */
-
-    if (["/", "/tags/"].indexOf(this.props.location.pathname) !== -1 ||
-    this.props.location.pathname.indexOf("/tags/") !== -1) {
-      header = (
+    if (bigHeader) {
+      return (
         <h1 style={{ ...scale(1.5),  marginBottom: rhythm(1.5), marginTop: 0, }} >
           <Link style={{ boxShadow: 'none', textDecoration: 'none', color: 'inherit', }}
               to={'/'}>
@@ -31,30 +23,34 @@ class Template extends React.Component {
           </Link>
         </h1>
       )
-    } 
-    
-    else {
-      header = (
-        <h3 style={{ fontFamily: 'Montserrat, sans-serif', 
-                     marginTop: 0, 
-                     marginBottom: rhythm(-1), }} >
-          <Link to={'/'}
-            style={{ boxShadow: 'none', 
-                     textDecoration: 'none', 
-                     color: 'inherit', }}>
-            My blog
-          </Link>
-        </h3>
-      )
     }
+    
+    // default
+
+    return (
+      <h3 style={{ fontFamily: 'Montserrat, sans-serif', 
+                    marginTop: 0, 
+                    marginBottom: rhythm(-1), }} >
+        <Link to={'/'}
+          style={{ boxShadow: 'none', 
+                    textDecoration: 'none', 
+                    color: 'inherit', }}>
+          My blog
+        </Link>
+      </h3>
+    );
+
+  }
+
+  render() {
+    const { location, children } = this.props;
 
     return (
       <Container style={{ maxWidth: rhythm(26), padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`, }}>
-        {header}
+        {this.getHeader(location)}
         {children()}
       </Container>
     );
-
   }
 }
 
@@ -62,6 +58,4 @@ Template.propTypes = {
   children: React.PropTypes.func,
   location: React.PropTypes.object,
   route: React.PropTypes.object,
-}
-
-export default Template
+};
