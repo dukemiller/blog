@@ -9,12 +9,12 @@ import { rhythm } from '../utils/typography'
 export default class BlogIndex extends React.Component {
 
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    const title = get(this, 'props.data.site.siteMetadata.title');
     const posts = get(this, 'props.data.allMarkdownRemark.edges');
 
     return (
       <div>
-        <Helmet title={siteTitle} />
+        <Helmet title={title} />
         <Bio />
         {posts.map(post => <PostPreview post={post} />)}
       </div>
