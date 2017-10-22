@@ -1,0 +1,30 @@
+
+/* to align with margins of paragraph elements */
+.gatsby-highlight {
+	margin-bottom: 28px;
+}
+
+/* add styling for individual code lines */
+p > code {
+	margin: 0 4px;
+    padding: 2px;
+    white-space: nowrap;
+	border: 1px solid #CCC;
+	
+    background-color: #F8F8F8;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+	border-radius: 3px;
+	
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+/* just my preferences for the code blocks */
+code {
+	line-height: 100%;
+    box-sizing: unset;
+	white-space: pre-wrap;
+}
+

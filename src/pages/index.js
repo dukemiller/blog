@@ -16,7 +16,9 @@ export default class BlogIndex extends React.Component {
       <div>
         <Helmet title={title} />
         <Bio />
-        {posts.map(post => <PostPreview post={post} />)}
+        <div id='posts'>
+          {posts.map(post => <PostPreview post={post} />)}
+        </div>
       </div>
     )
   }
