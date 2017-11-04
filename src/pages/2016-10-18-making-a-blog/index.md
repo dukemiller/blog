@@ -1,6 +1,6 @@
 ---
 path: "/making-a-blog"
-date: "2016-12-12T04:19:42.085Z"
+date: "2016-10-18T04:19:42.085Z"
 title: "Making A Blog"
 tags: [experience, guide, ruby]
 ---
