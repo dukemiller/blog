@@ -1,4 +1,8 @@
 
+h2, h4 {
+    margin-top: 28px;
+}
+
 /* to align with margins of paragraph elements */
 .gatsby-highlight {
 	margin-bottom: 28px;
@@ -27,4 +31,3 @@ code {
     box-sizing: unset;
 	white-space: pre-wrap;
 }
-
