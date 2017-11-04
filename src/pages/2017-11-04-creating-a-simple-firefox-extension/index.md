@@ -11,7 +11,7 @@ My project would be using the latest recommended standard of browser plugin desi
 
 ### Simple drafting
 
-So, here's my very simple premise for a starter project: On any YouTube video page, I would like to change the `href` url on clicking the channel's username from `youtube.com/channel/{username}` to `youtube.com/channel/{username}/videos`. Take a second and think of the steps that you believe would be necessary to accomplish this. 
+So, here's my very simple premise for a starter project: On any YouTube video page, I would like to change the `href` url on clicking the channel's username from `youtube.com/channel/{username}` to `youtube.com/channel/{username}/videos`. Wow, that's so simple that it barely needs an extension right? But, take a second and think of the steps that you believe would be necessary to accomplish this. 
 
 If you're familiar with JavaScript, you'd think it would just be: select the correct element, change `href` attribute. Maybe since you're using a new framework there'd be some sort of hook for pre-processing a page that you might need to figure out or something, but besides that it would be mostly straightforward. With the knowledge that the script would run once every time you open a matching YouTube url, in JavaScript it'd probably look something like:
 
