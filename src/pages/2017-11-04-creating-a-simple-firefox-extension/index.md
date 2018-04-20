@@ -28,15 +28,15 @@ A little chunk of the web uses single page application architectures for their f
 How would I solve that problem on a single load? My initial idea was to hook onto something like `DOMNodeInserted` and continually parse the returned inserted nodes until a node matches what I would expect the video page to be. We'd maybe have something like this as our main function (because remember, this will only get ran once):
 
 ```js
-if (on_a_video_page()) {
+if (onVideoPage()) {
     const node = document.querySelector("#owner-name > a:nth-child(1)");
-    change_the_href(node);
+    changeHref(node);
 }
 
 else {
     document.body.addEventListener('DOMNodeInserted', (e) => {
-        if (is_correct_node(e.data)) {
-            change_the_href(e.data);
+        if (isCorrectNode(e.data)) {
+            changeHhref(e.data);
         }
     });
 }
